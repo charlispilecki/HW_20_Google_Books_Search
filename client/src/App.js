@@ -1,19 +1,21 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome to React</h2>
+      <div>
+          <div>
+              <h1>(React) Google Books Search</h1>
+              <h2>Search for and save books of interest</h2>
+          </div>
+          <div>
+              <h2>Book Search</h2>
+              <input />
+          </div>
+          <div>
+              <h2>Results</h2>
+          </div>
       </div>
-      <p className="App-intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
-    </div>
-  );
+  )
 }
 
 
