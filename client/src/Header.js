@@ -19,8 +19,9 @@ export default function Header() {
                     </li>
                 </ul>
             </nav>
-            <h1>(React) Google Books Search</h1>
-            <h2>Search for and save books of interest</h2>
+            <h1 className="title">(React) Google Books Search</h1>
+            <h2 className="subtitle">Search for and save books of interest</h2>
+            <br></br>
         </div>
     )
 }
