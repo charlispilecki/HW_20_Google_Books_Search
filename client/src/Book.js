@@ -14,6 +14,7 @@ export default function Book({
                 title, authors, desc, img, link
             }
           });
+        alert('Book saved!')
     }
 
     async function deleteBook() {
@@ -21,6 +22,7 @@ export default function Book({
             method: 'delete',
             url: API_URL + `api/books/${title}`
           });
+        alert('Book deleted')
     }
 
     return (
