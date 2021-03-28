@@ -30,14 +30,16 @@ export default function Search() {
         <div>
             <h2>Book Search</h2>
             <input onChange={handleChange} value={query}/>
-            <button onClick={() => searchForBooks('harry potter')}>Search</button>
+            <button onClick={() => searchForBooks(query)}>Search</button>
             <br></br>
             <div>
                 {books.map(book => {
                     return (
-                        <Book key={book.id}
+                        <Book 
+                            isSaved={false}
+                            key={book.id}
                             title={book.volumeInfo.title}
-                            author={book.volumeInfo.authors.join()}
+                            authors={book.volumeInfo.authors?.join()}
                             desc={book.volumeInfo.description}
                             img={book.volumeInfo.imageLinks?.thumbnail}
                             link={book.volumeInfo.previewLink}
