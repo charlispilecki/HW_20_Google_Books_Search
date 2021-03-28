@@ -4,7 +4,7 @@ import Book from "./Book"
 
 export default function Search() {
 
-    const [query, setQuery] = useState('')
+    const [query, setQuery] = useState('Harry Potter')
     const [books, setBooks] = useState([]);
 
     async function searchForBooks() {
@@ -15,12 +15,12 @@ export default function Search() {
         setBooks(books)
     }
 
-    // useEffect(() => {
-    //     loadDataOnlyOnce();
-    // }, []);
+    useEffect(() => {
+        searchForBooks();
+    }, []);
 
 
-    //volumeInfo.title, authors[0], description
+    //volumeInfo.title, authors[0], description, imageLinks.thumbnail, previewLink
 
     function handleChange(event) {
         setQuery(event.target.value)
@@ -36,9 +36,11 @@ export default function Search() {
                 {books.map(book => {
                     return (
                         <Book key={book.id}
-                            name={book.volumeInfo.title}
-                            author={book.volumeInfo.authors?.length ? book.volumeInfo.authors[0]: ''}
+                            title={book.volumeInfo.title}
+                            author={book.volumeInfo.authors.join()}
                             desc={book.volumeInfo.description}
+                            img={book.volumeInfo.imageLinks?.thumbnail}
+                            link={book.volumeInfo.previewLink}
                         ></Book>
                     )
                 })}

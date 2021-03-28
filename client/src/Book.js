@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 
 export default function Book({
-    name, author, desc
+    title, author, desc, img, link
 }) {
     return (
         <div>
-            <h3>{name}</h3>
+            <h3>{title}</h3>
+            <a href={link}>{title}</a>
             <h4>{author}</h4>
+            <img src={img} />
             <button>View</button>
             <button>Save</button>
             <p>{desc}</p>
