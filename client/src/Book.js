@@ -22,7 +22,7 @@ export default function Book({
             method: 'delete',
             url: API_URL + `api/books/${title}`
           });
-        alert('Book deleted')
+        window.location.reload()
     }
 
     return (
