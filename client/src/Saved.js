@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import Book from "./Book"
+import { API_URL } from "./api"
 
 export default function Saved() {
 
     const [books, setBooks] = useState([]);
 
     async function getSavedBooks() {
-        let response = await axios.get(`http://localhost:3001/api/books`)
+        let response = await axios.get(API_URL + `api/books`)
         console.log(response)
         let books = response.data
         setBooks(books)

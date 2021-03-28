@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { API_URL } from "./api"
 
 export default function Book({
     title, authors, desc, img, link, isSaved
@@ -8,7 +9,7 @@ export default function Book({
     async function saveBook() {
         await axios({
             method: 'post',
-            url: 'http://localhost:3001/api/books',
+            url: API_URL + 'api/books',
             data: {
                 title, authors, desc, img, link
             }
@@ -18,7 +19,7 @@ export default function Book({
     async function deleteBook() {
         await axios({
             method: 'delete',
-            url: `http://localhost:3001/api/books/${title}`
+            url: API_URL + `api/books/${title}`
           });
     }
 
