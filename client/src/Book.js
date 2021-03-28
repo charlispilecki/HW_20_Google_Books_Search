@@ -40,7 +40,7 @@ export default function Book({
             </div>
             <h4 className="title is-6">Written by: {authors}</h4>
             <div className="is-flex is-justify-content-space-between">
-                <img src={img} />
+                <img style={{maxHeight: '200px', minHeight: '200px'}} src={img} />
                 <p className="p-4 ">{desc}</p>
             </div>
         </div>

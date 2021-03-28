@@ -8,7 +8,7 @@ import {
 
 export default function Header() {
     return (
-        <div>
+        <div className="mb-6">
             <nav className="navbar">
                 <div className="navbar-brand">
                     <a className="navbar-item" href="search">
@@ -22,9 +22,8 @@ export default function Header() {
                     </div>
                 </div>
             </nav>
-            <h1 className="title has-text-centered">(React) Google Books Search</h1>
+            <h1 className="title has-text-centered mt-2">(React) Google Books Search</h1>
             <h2 className="subtitle has-text-centered">Search for and save books of interest</h2>
-            <br></br>
         </div>
     )
 }
