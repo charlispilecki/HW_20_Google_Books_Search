@@ -9,18 +9,21 @@ import {
 export default function Header() {
     return (
         <div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Search</Link>
-                    </li>
-                    <li>
-                        <Link to="/saved">Saved</Link>
-                    </li>
-                </ul>
+            <nav className="navbar">
+                <div className="navbar-brand">
+                    <a className="navbar-item" href="search">
+                        Google Books
+                    </a>
+                </div>
+                <div className="navbar-menu">
+                    <div className="navbar-start">
+                        <Link className="navbar-item" to="/">Search</Link>
+                        <Link className="navbar-item" to="/saved">Saved</Link>
+                    </div>
+                </div>
             </nav>
-            <h1 className="title">(React) Google Books Search</h1>
-            <h2 className="subtitle">Search for and save books of interest</h2>
+            <h1 className="title has-text-centered">(React) Google Books Search</h1>
+            <h2 className="subtitle has-text-centered">Search for and save books of interest</h2>
             <br></br>
         </div>
     )

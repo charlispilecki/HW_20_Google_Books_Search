@@ -4,7 +4,7 @@ import Book from "./Book"
 
 export default function Search() {
 
-    const [query, setQuery] = useState('Harry Potter')
+    const [query, setQuery] = useState('')
     const [books, setBooks] = useState([]);
 
     async function searchForBooks() {
@@ -15,9 +15,9 @@ export default function Search() {
         setBooks(books)
     }
 
-    useEffect(() => {
-        searchForBooks();
-    }, []);
+    // useEffect(() => {
+    //     searchForBooks();
+    // }, []);
 
 
     //volumeInfo.title, authors[0], description, imageLinks.thumbnail, previewLink
@@ -28,9 +28,13 @@ export default function Search() {
 
     return (
         <div>
-            <h2>Book Search</h2>
-            <input onChange={handleChange} value={query}/>
-            <button onClick={() => searchForBooks(query)}>Search</button>
+            <h2 className="title has-text-centered">Book Search</h2>
+            <div>
+                <input className="input" onChange={handleChange} value={query}/>
+            </div>
+            <div className="is-flex is-justify-content-center mt-2 mx-6">
+                <button className="button" onClick={() => searchForBooks(query)}>Search</button>
+            </div>
             <br></br>
             <div>
                 {books.map(book => {

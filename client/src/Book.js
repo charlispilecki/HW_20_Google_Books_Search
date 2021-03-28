@@ -26,16 +26,23 @@ export default function Book({
     }
 
     return (
-        <div>
-            <h3>{title}</h3>
-            <a href={link}>{title}</a>
-            <h4>{authors}</h4>
-            <img src={img} />
-            <button>View</button>
-            {isSaved ? <button onClick={deleteBook}>Delete</button> : <button onClick={saveBook}>Save</button>}
-            <p>{desc}</p>
-
-            <br></br>
+        <div className="mb-3 p-4" style={{border: '1px solid black'}}>
+            <div className="is-flex is-justify-content-space-between">
+                <h3 className="title is-4">{title}</h3>
+                <div>
+                    <button className="button mr-2" onClick={() => window.location=link}>View</button>
+                    {
+                    isSaved ? 
+                    <button className="button" onClick={deleteBook}>Delete</button> : 
+                    <button className="button" onClick={saveBook}>Save</button>
+                    }
+                </div>
+            </div>
+            <h4 className="title is-6">Written by: {authors}</h4>
+            <div className="is-flex is-justify-content-space-between">
+                <img src={img} />
+                <p className="p-4 ">{desc}</p>
+            </div>
         </div>
     )
 }

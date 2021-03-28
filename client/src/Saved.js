@@ -20,7 +20,8 @@ export default function Saved() {
 
     return (
         <div>
-            <h2>Results</h2>
+            <h2 className="title has-text-centered">Saved Books</h2>
+            <div>
                 {books.map(book => {
                     return (
                         <Book 
@@ -34,6 +35,7 @@ export default function Saved() {
                         ></Book>
                     )
                 })}
+            </div>
         </div>
     )
 }
